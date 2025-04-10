@@ -6,4 +6,3 @@ models/Tokenizer.pkl
 notebooks/comment-filteration-system.ipynb
 src/preprocessed_train.csv
 src/preprocessed_test.csv
-.gitignore
