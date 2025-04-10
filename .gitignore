@@ -1,8 +1,0 @@
-data/
-app/my_image_2.png
-app/dnn_app.py
-models/DNN_model.h5
-models/Tokenizer.pkl
-notebooks/comment-filteration-system.ipynb
-src/preprocessed_train.csv
-src/preprocessed_test.csv
