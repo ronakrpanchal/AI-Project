@@ -12,10 +12,19 @@ A machine learning-based project to filter inappropriate, offensive, or toxic co
 
 ---
 
+## 📂 Dataset
+
+This project uses the [Jigsaw Toxic Comment Classification Challenge dataset](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data) from Kaggle.
+
+To download:
+1. Visit the [dataset page](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data)
+2. Accept the competition rules
+3. Download `train.csv` , `test.csv` and `test_labels.csv` into the `data/` folder
+
 ## 🧠 ML Model
 - **Vectorizer**: TF-IDF
-- **Classifier**: Logistic Regression
-- **Trained Labels**: toxic (binary)
+- **Classifier**: Logistic Regression , Decision Tree , Random Forest
+- **Trained Labels**: toxic, severe_toxic, obscene, threat, insult, identity_hate
 
 ---
 
@@ -23,16 +32,25 @@ A machine learning-based project to filter inappropriate, offensive, or toxic co
 ```
 AI Project/
 ├── app/
-│   └── app.py                # Streamlit app UI for comment filtering
+│   ├── app.py                  # Streamlit app for traditional models
 ├── data/
-│   └── cleaned_dataset.csv   # Preprocessed dataset
+│   ├── test.csv                # Raw test data
+│   ├── test_labels.csv         # Test labels (for evaluation)
+│   └── train.csv               # Raw training data
 ├── models/
-│   ├── comment_filter_model.pkl  # Trained ML model
-│   └── vectorizer.pkl           # TF-IDF vectorizer
+│   ├── decision_tree.pkl       # Decision Tree model
+│   ├── log_reg.pkl             # Logistic Regression model
+│   ├── random_forest.pkl       # Random Forest model
+│   └── vectorizer.pkl          # TF-IDF vectorizer
 ├── notebooks/
-│   ├── preprocessing.ipynb     # Step 1 & 2: Data Cleaning
-│   └── eda_and_models.ipynb    # Step 3–5: EDA, Training, Evaluation
-└── my_image.jpeg               # Sample user image for post
+│   ├── eda.ipynb               # Exploratory Data Analysis
+│   └── models.ipynb            # Training and evaluation of models
+├── src/
+│   ├── preprocess.ipynb        # Preprocessing logic
+│   ├── preprocessed_train.csv  # Cleaned train data
+│   └── preprocessed_test.csv   # Cleaned test data
+├── Readme.md                   # Project documentation
+└── requirements.txt            # Python dependencies
 ```
 
 ---
