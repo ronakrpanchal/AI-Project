@@ -7,7 +7,6 @@ import os
 from dotenv import load_dotenv
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-# from spellchecker import SpellChecker
 
 # Load environment variables
 load_dotenv()
@@ -29,33 +28,6 @@ app = Flask(__name__)
 # vectorizer = joblib.load(VECTORIZER)
 tokenizer = joblib.load(TOKENIZER)
 model = load_model(MODEL)
-
-# model.summary()
-
-# from spellchecker import SpellChecker
-# import re
-
-# spell = SpellChecker(distance=2)
-
-# def normalize_and_correct(text):
-#     # Lowercase and remove symbols that break words
-#     text = text.lower()
-#     text = re.sub(r"[^a-zA-Z\s]", "", text)  # Remove non-alphabetic chars
-#     text = re.sub(r"\s+", " ", text).strip()
-
-#     # Tokenize
-#     words = text.split()
-
-#     # Spell correct each word (you can skip short ones)
-#     corrected_words = []
-#     for word in words:
-#         if len(word) > 3 and word not in spell:
-#             corrected = spell.correction(word)
-#             corrected_words.append(corrected if corrected else word)
-#         else:
-#             corrected_words.append(word)
-
-#     return " ".join(corrected_words)
 
 # Initialize database
 DB_FILE = "comments.db"
